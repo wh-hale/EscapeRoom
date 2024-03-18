@@ -1,0 +1,72 @@
+/*verschiedenste Stilinformationen*/
+
+body {
+  background-image: url('w2_gebaeude.jpg');
+  background-size: center; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+
+  header img {
+    max-width: 10%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  section {
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .text-container {
+    background-color: #7e7e7e9c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(160, 160, 160, 0.1);
+    display: inline-block;
+  }
+
+  .transparent-button {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .transparent-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20;
+    margin-bottom: 60;
+    margin-left: -10mm;
+  }
+
+  button:hover {
+    background-color: #4d4c4c;
+  }
