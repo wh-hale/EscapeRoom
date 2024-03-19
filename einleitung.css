@@ -65,7 +65,7 @@ button {
   cursor: pointer;
   margin-top: 20px;
   margin-bottom: 60px;
-  margin-left: -20mm;
+  margin-left: 20mm;
   margin-right: 8mm; /* Geändert von -3mm zu 8mm */
 }
 
