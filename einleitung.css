@@ -56,18 +56,18 @@ body {
     background-color: rgba(255, 255, 255, 0.3);
   }
 
-  button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 20;
-    margin-bottom: 60;
-    margin-left: -10mm;
-    margin-right: 3mm;
-  }
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  margin-left: -10mm;
+  margin-right: 8mm; /* Geändert von -3mm zu 8mm */
+}
 
   button:hover {
     background-color: #4d4c4c;
