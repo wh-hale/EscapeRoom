@@ -38,7 +38,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(160, 160, 160, 0.1);
     display: inline-block;
-    margin-top: -10mm;
+    margin-top: 10mm;
   }
 
   .transparent-button {
@@ -65,7 +65,7 @@ button {
   cursor: pointer;
   margin-top: 20px;
   margin-bottom: 60px;
-  margin-left: -10mm;
+  margin-left: -20mm;
   margin-right: 8mm; /* Geändert von -3mm zu 8mm */
 }
 
