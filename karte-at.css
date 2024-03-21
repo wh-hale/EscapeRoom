@@ -1,7 +1,7 @@
     /*verschiedenste Stilinformationen*/
     
     body {
-        background-image: url('oesterreich_karte.jpg');
+        background-image: url('../pictures/oesterreich_karte.jpg');
         background-size: cover;
         background-position: cover;
         background-repeat: no-repeat;
@@ -13,8 +13,9 @@
       }
   
       header {
-        color: #000000;
-        padding: 10px;
+        background-color: #81B927;
+        color: #fff;
+        padding: 5px;
         text-align: center;
       }
   
@@ -37,27 +38,6 @@
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(160, 160, 160, 0.1);
         display: inline-block;
-      }
-  
-      .button-back {
-        position: absolute;
-        left: 20px;
-        top: 0px;
-      }
-  
-      .backzuruck-button {
-        background-color: transparent;
-        color: #fff;
-        padding: 10px 20px;
-        font-size: 16px;
-        border: 2px solid #fff;
-        cursor: pointer;
-        margin: 5px;
-        transition: background-color 0.3s ease;
-      }
-  
-      .backzuruck-button:hover {
-        background-color: rgba(255, 255, 255, 0.3);
       }
   
       .button-container {
@@ -116,4 +96,29 @@
   
       .transparent-button:hover {
         background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border: 1px solid black;
+        z-index: 10000; 
+        text-align: center;
+      }
+  
+      /* Overlay für den Hintergrund */
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* halbtransparenter, schwarzer Hintergrund */
+        z-index: 9999; /* Stelle das Overlay über alle anderen Elemente außer dem Pop-up-Fenster */
       }
