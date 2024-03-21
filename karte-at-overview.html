@@ -5,14 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>W&H Austria Karte</title>
-  <link rel="icon" type="image/x-icon" href="wh_original.ico">
-  <link rel="stylesheet" href="karte-at.css">
+  <link rel="icon" type="image/x-icon" href="../icon/wh_original.ico">
+  <link rel="stylesheet" href="../css/karte-at.css">
+  <style>
+    /* CSS für das Pop-up-Fenster */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 1px solid black;
+      z-index: 9999;
+    }
+  </style>
 </head>
 
 <body>
 
   <!--Header mit Titel & Logo-->
   <header>
+    <img src="../pictures/wh_logo.png" alt="W&H Logo">
     <h1>Ausbildungswelt von W&H</h1>
   </header>
 
@@ -32,6 +47,24 @@
   <section>
 
   </section>
+
+  <div id="overlay"></div>
+
+  <!-- Pop-up-Fenster -->
+  <div id="popup">
+    <p>Deine Mission führt dich durch die Hallen des Hauptstandortes in Bürmoos</p>
+    <p>sowieso zu den Tochterfirmen W&H Austria und W&H Form GmbH.</p>
+  </div>
+
+  <script>
+    // JavaScript, um das Pop-up-Fenster nach 1 Sekunde anzuzeigen
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+      }, 1000);
+    });
+  </script>
 </body>
 
 </html>
