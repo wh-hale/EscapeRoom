@@ -105,7 +105,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: rgba(255, 255, 255, 0.9); /* leicht transparenter Hintergrund */
         padding: 20px;
         border-radius: 10px; /* abgerundete Ecken */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* subtiler Schatten */
