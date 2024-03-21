@@ -98,27 +98,23 @@
         background-color: rgba(255, 255, 255, 0.3);
       }
 
+      
       #popup {
         display: none;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.9); /* leicht transparenter Hintergrund */
         padding: 20px;
-        border: 1px solid black;
+        border-radius: 10px; /* abgerundete Ecken */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* subtiler Schatten */
         z-index: 10000; 
         text-align: center;
-      }
-  
-      /* Overlay für den Hintergrund */
-      #overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* halbtransparenter, schwarzer Hintergrund */
-        z-index: 9999; /* Stelle das Overlay über alle anderen Elemente außer dem Pop-up-Fenster */
-      }
+        max-width: 80%; /* Maximalbreite für bessere Lesbarkeit */
+    }
+    
+    #popup p {
+        font-size: 18px; /* Anpassen der Schriftgröße */
+        line-height: 1.5; /* Zeilenhöhe für verbesserte Lesbarkeit */
+    }
