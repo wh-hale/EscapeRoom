@@ -1,7 +1,7 @@
     /*verschiedenste Stilinformationen*/
     
     body {
-        background-image: url('pictures/oesterreich_karte.jpg');
+        background-image: url('oesterreich_karte.jpg');
         background-size: cover;
         background-position: cover;
         background-repeat: no-repeat;
