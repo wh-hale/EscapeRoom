@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elektrotechnik</title>
+<link rel="icon" type="image/x-icon" href="icon/wh_original.ico">
+<style>
+    /* Stil für das Codeschloss */
+    #codeLock {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+    }
+    
+    /* Stil für die Code-Eingabetastatur */
+    .keyboardButton {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        background-color: #ccc;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 40px;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+
+<button onclick="openCodeLock()">Codeschloss öffnen</button>
+
+<div id="codeLock">
+    <h2>Code:</h2>
+    <div id="codeInput"></div>
+    <div id="keyboard">
+        <button class="keyboardButton" onclick="inputCode(1)">1</button>
+        <button class="keyboardButton" onclick="inputCode(2)">2</button>
+        <button class="keyboardButton" onclick="inputCode(3)">3</button>
+        <br>
+        <button class="keyboardButton" onclick="inputCode(4)">4</button>
+        <button class="keyboardButton" onclick="inputCode(5)">5</button>
+        <button class="keyboardButton" onclick="inputCode(6)">6</button>
+        <br>
+        <button class="keyboardButton" onclick="inputCode(7)">7</button>
+        <button class="keyboardButton" onclick="inputCode(8)">8</button>
+        <button class="keyboardButton" onclick="inputCode(9)">9</button>
+        <br>
+        <button class="keyboardButton" onclick="inputCode(0)">0</button>
+        <button class="keyboardButton" onclick="clearCode()">C</button>
+    </div>
+</div>
+
+<script>
+    var enteredCode = '';
+
+    function openCodeLock() {
+        var codeLock = document.getElementById("codeLock");
+        codeLock.style.display = "block";
+    }
+
+    function inputCode(number) {
+        enteredCode += number;
+        document.getElementById("codeInput").innerText = enteredCode;
+
+        if (enteredCode.length === 4) {
+            if (enteredCode === '2534') {
+                alert("Glückwunsch! Der Code ist korrekt!");
+                enteredCode = '';
+                document.getElementById("codeInput").innerText = '';
+                var codeLock = document.getElementById("codeLock");
+                codeLock.style.display = "none";
+            } else {
+                alert("Falscher Code! Versuchen Sie es erneut.");
+                enteredCode = '';
+                document.getElementById("codeInput").innerText = '';
+            }
+        }
+    }
+
+    function clearCode() {
+        enteredCode = '';
+        document.getElementById("codeInput").innerText = '';
+    }
+</script>
+
+</body>
+</html>

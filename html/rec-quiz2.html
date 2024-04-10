@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W&H Escape Room</title>
+  <link rel="icon" type="image/x-icon" href="icon/wh_original.ico">
+  <link rel="stylesheet" href="css/rec-quiz2.css">
+</head>
+
+<body>
+
+  <section>
+
+    <div class="overlay" id="overlay">
+        
+      <br>
+      
+      <div class="popup">
+        
+        <button class="close-btn" onclick="closePopup()">X</button>
+
+        <!-- Fehlermeldung bei falscher Antwort -->
+        <div id="msgError" class="error-container invisible"><p>Die Antwort ist leider falsch, versuche es nochmal!</p></div>
+
+        <!-- Popup für den Code -->
+        <div id="codePopup" class="invisible">
+          <p>Der Code lautet: <strong>2658</strong></p>
+        </div>
+
+        <img src="pictures/wh_story.png" width="400px" height="700px">
+        <br>
+        
+        <!-- Label für Texteingabe -->
+        <div class="text-container">
+          <label id="lblInput">Antwort hier eingeben: </label>
+          <input id="answer" type="text" onkeyup="checkAnswer(event)">
+        </div>
+      </div>
+    </div>
+
+    <!-- Button zum Starten des Spiels -->
+    <button onclick="openPopup()" class="transparent-button" id="startButton"></button>
+
+    <!-- Hintergrundbutton mit Bild -->
+    <div id="backgroundButton" class="background-button invisible" onclick="openCodeLock()">
+      <img src="pictures/zusätzlich/emoji_schloss.png" alt="Button Bild">
+    </div>
+
+    <br>
+
+    <!-- Label für die Frage -->
+    <br>
+    <div class="text-container" id="label">
+      <p>Finde heraus von wem die Firma gegründet wurde.</p>
+      <p>Dies erfährst du in den alten Schriften.</p>
+    </div>
+  </section>
+
+  <!-- .js Code zum überprüfen der mit Enter bestätigten Eingabe & dementsprechende Rückmeldung -->
+  <script>
+    var errorMessage = document.getElementById("msgError");
+    var codePopup = document.getElementById("codePopup");
+    var backgroundButton = document.getElementById("backgroundButton");
+
+    function checkAnswer(event) {
+      if (event.key === "Enter" || event.keyCode === 13) {
+        var inputValue = document.getElementById("answer").value.toLowerCase();
+        var correctAnswer = "weber und hampel";
+        if (inputValue === correctAnswer) {
+          alert("Glückwunsch! \nDu hast herausgefunden wofür W&H steht.");
+          codePopup.classList.remove("invisible");
+          backgroundButton.classList.remove("invisible");
+        } else {
+          showErrorMessage();
+        }
+      }
+    }
+    
+    /* Error Message Erscheinung falls die Antwort falsch ist */
+    function showErrorMessage() {
+      errorMessage.classList.remove("invisible");
+      setTimeout(function () {
+        errorMessage.classList.add("invisible");
+      }, 3000);
+    }
+
+    function openPopup() {
+      document.getElementById("overlay").style.display = "flex";
+      document.getElementById("label").style.visibility = "hidden"; 
+      document.getElementById("startButton").classList.add("hide"); 
+      document.getElementById("answer").style.visibility = "visible";
+      document.getElementById("lblInput").style.visibility = "visible";
+    }
+
+    function closePopup() {
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("label").style.visibility = "visible"; 
+      document.getElementById("startButton").classList.remove("hide");
+      document.getElementById("answer").style.visibility = "hidden";
+      document.getElementById("lblInput").style.visibility = "hidden";
+    }
+
+    // Funktion zum Öffnen des Code-Eingabe-Popups
+    function openCodeLock() {
+      var codeInputPopup = document.getElementById("codeInputPopup");
+      codeInputPopup.style.display = "block";
+    }
+
+    // Funktion zur Überprüfung des eingegebenen Codes
+    function checkCode() {
+      var codeInput = document.getElementById("codeInput").value;
+      if (codeInput === "2658") {
+        alert("Glückwunsch! Das ist der richtige Code.");
+      } else {
+        alert("Falscher Code! Versuchen Sie es erneut.");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
+
+

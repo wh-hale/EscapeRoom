@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ausbildungswelt von W&H</title>
+  <link rel="icon" type="image/x-icon" href="wh_original.ico">
+  <link rel="stylesheet" href="karte-at.css">
+</head>
+
+<body>
+
+  <!--Header mit Titel & Logo-->
+  <header>
+    <img src="wh_logo.png" alt="W&H Logo">
+    <h1>Ausbildungswelt von W&H</h1>
+  </header>
+
+  <!--3 transparente Buttons zum Navigieren zu DWB, AT & FORM-->
+  <div class="button-container button-whaustria">
+    <button class="transparent-button" onclick="window.location.href='#';"></button>
+  </div>
+
+  <div class="button-container button-whdentalwerk">
+    <button class="whdental-button" onclick="window.location.href='werk1.html'"></button>
+  </div>
+
+  <div class="button-container button-whform">
+    <button class="transparent-button" onclick="window.location.href='#';"></button>
+  </div>
+
+  <section>
+
+  </section>
+
+  <div id="overlay"></div>
+
+  <!-- Pop-up-Fenster -->
+  <div id="popup">
+    <p>Deine Mission führt dich durch die Hallen des Hauptstandortes in Bürmoos sowieso zu den Tochterfirmen W&H Austria und W&H Form GmbH.</p>
+  </div>
+
+  <script>
+    // JavaScript, um das Pop-up-Fenster nach 1 Sekunde anzuzeigen
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+      }, 1000);
+    });
+  </script>
+</body>
+
+</html>

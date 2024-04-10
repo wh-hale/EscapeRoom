@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applikationsentwicklung</title>
+  <link rel="icon" type="image/x-icon" href="icon/wh_original.ico">
+  <link rel="stylesheet" href="css/applikationsentwicklung.css">
+</head>
+
+<body>
+
+  <h1>Live HTML-Code</h1>
+
+  <div class="container">
+    <textarea id="codeInput" oninput="updatePreview()">&lt;h1&gt;Bild von W&amp;H Steward&lt;/h1&gt; &lt;img src='pictures/wh_steward.jpg'&gt;</textarea>
+    <div id="preview"></div>
+  </div>
+
+  <br>
+
+  <div class="text-container">
+    <button onclick="CheckInput()" id="btnCheck">Check Input</button>
+  </div>
+
+  <script>
+    function CheckInput() {
+      var codeInput = document.getElementById('codeInput').value;
+      if (codeInput === "<h1>Bild von W&H Steward</h1> <img src='pictures/wh_steward.jpg'>") {
+        alert("Glückwunsch! \nDu könntest schon fast Programmierer werden.");
+      }
+    }
+
+    function updatePreview() {
+      var codeInput = document.getElementById('codeInput').value;
+      var preview = document.getElementById('preview');
+      preview.innerHTML = codeInput;
+    }
+
+  
+    updatePreview();
+  </script>
+</body>
+
+</html>

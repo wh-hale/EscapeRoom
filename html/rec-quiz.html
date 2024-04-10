@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W&H Rec Quiz</title>
+  <link rel="icon" type="image/x-icon" href="icon/wh_original.ico">
+  <link rel="stylesheet" href="css/rec-quiz.css">
+  <script src="js/rec-quiz.js"></script>
+</head>
+
+<body>
+
+  <!--Transparenter Button-->
+  <button onclick="openPopup()" id="btnTrans" class="transparent-button"></button>
+
+  <section>
+
+    <!--Textcontainer mit Spielanweisung-->
+    <div class="text-container">
+      <p>Versuche möglichst passend dem Anrufer zu Antworten.</p>
+    </div>
+
+    <br>
+    <br>
+
+    <!--Anrufcontainer mit Anrufdialog-->
+    <div class="anruf-container" id="anrufbox">
+      <p>Kunde ruft an....</p>
+      <p>Rezeption:</p>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <!--Buttoncontainer mit Antwortmöglichkeiten-->
+    <div class="button-container">
+      <button id="btnOne" onclick="CheckButtonone()">W&H Dentalwerk [Name], Servus!</button>
+      <button id="btnTwo" onclick="CheckButtontwo()">Was gibts?</button>
+      <button id="btnThree" onclick="CheckButtonthree()">W&H Dentalwerk [Name], Guten Tag!</button>
+    </div>
+
+    <!--Container für Fehlermeldung-->
+    <div class="error-container invisible" id="errorMessage">
+      <div class="error-message">Es ist leider falsch, versuche es nochmal.</div>
+    </div>
+
+    <br>
+    <div class="overlay" id="overlay">
+      <div class="popup">
+        <h2 color="#000000">Telefonbuch</h2>
+        <img src="../pictures/extensions.png" width="700px" height="400px">
+        <br>
+        <br>
+        <br>
+        <button onclick="closePopup()">Schließen</button>
+      </div>
+    </div>
+    <br>
+
+    <!--Eingabefeld für die Durchwahl-->
+    <label id="extension" class="invisible">
+      <p>Gib die richtige Durchwahl ein:</p>
+      <p>Du kannst im Telefonbuch nachsehen.</p>
+    </label>
+    <br>
+    <input id="extensionInput" class="invisible" type="text">
+  </section>
+
+  <script>
+    // JavaScript-Code für die Anrufsimulation
+
+    var Anruffeld = document.getElementById("anrufbox");
+    var btnTrans = document.getElementById("btnTrans");
+    var btnOne = document.getElementById("btnOne");
+    var btnTwo = document.getElementById("btnTwo");
+    var btnThree = document.getElementById("btnThree");
+    var input = document.getElementById("extension");
+    var inputText = document.getElementById("extensionInput");
+    var errorMessage = document.getElementById("errorMessage");
+
+    /*Button-Funktion -> wenn der Button gedrückt wird, wird der Wert von i überprüft und die entsprechende Aktion ausgeführt*/
+    var i = 0;
+
+    function CheckButtonone() {
+      if (i == 1) {
+        Anruffeld.innerHTML = "<p>Kunde ruft an....</p><p>Reception: W&H Dentalwerk [Name], Guten Tag!</p><p>Anrufer: Ja, guten Tag! Hier spricht Herr Schmidt. Ich würde gerne mit Baier Christof sprechen.</p><p>Reception: Warten Sie bitte einen Moment, ich leite Sie weiter.</p><p>Anrufer: Vielen Dank!</p>";
+        btnOne.style.display = "none";
+        btnTwo.style.display = "none";
+        btnThree.style.display = "none";
+        input.classList.remove("invisible");
+        inputText.classList.remove("invisible");
+        input.classList.add("text-container");
+        inputText.classList.add("text-container");
+      } else {
+        showErrorMessage;
+      }
+    }
+
+    function CheckButtontwo() {
+      if (i != 2) {
+        showErrorMessage();
+      }
+    }
+
+    function CheckButtonthree() {
+      if (i == 0) {
+        Anruffeld.innerHTML = "<p>Kunde ruft an....</p><p>Reception: W&H Dentalwerk [Name], Guten Tag!</p><p>Anrufer: Ja, guten Tag! Hier spricht Herr Schmidt. Ich würde gerne mit Baier Christof sprechen.</p><p>Reception:</p>";
+        i++;
+        btnOne.innerHTML = "Warten Sie bitte einen Moment, ich leite Sie weiter.";
+        btnTwo.innerHTML = "Jetzt warte mal, ich bin noch nicht so weit.";
+        btnThree.innerHTML = "Nein, ich will gerade nicht. [legt auf]";
+      } else {
+        showErrorMessage();
+      }
+    }
+
+    function showErrorMessage() {
+      errorMessage.classList.remove("invisible");
+      setTimeout(function() {
+        errorMessage.classList.add("invisible");
+      }, 2000);
+    }
+
+    /*wenn Enter gedrückt wurde wird die Eingabe überprüft & dann die entsprechende Rückmeldung gesendet*/
+    inputText.addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        var inputValue = inputText.value;
+        if (inputValue === "507") {
+          alert("Glückwunsch! \nDu hast immer passend geantwortet und die richtige Durchwahl herausgefunden!")
+          setTimeout(function() {}, 4000);
+          window.location.href = 'rec-quiz2.html'
+        } else {
+          showErrorMessage();
+        }
+      }
+    })
+
+    function openPopup() {
+      document.getElementById("overlay").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>

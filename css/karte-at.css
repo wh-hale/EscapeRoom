@@ -1,0 +1,119 @@
+/*verschiedenste Stilinformationen*/
+    
+body {
+    background-image: url('oesterreich_karte.jpg');
+    background-size: cover;
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+  
+  header {
+    background-color: #81B927;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  header img {
+    max-width: 10%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  section {
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .text-container {
+    background-color: #7e7e7e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(160, 160, 160, 0.1);
+    display: inline-block;
+  }
+  
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .button-whaustria {
+    position: absolute;
+    right: 680px;
+    top: 285px;
+    margin: 20px;
+  }
+  
+  .button-whdentalwerk {
+    margin: 20px;
+    padding: 40px 40px;
+    position: absolute;
+    right: 724px;
+    top: 420px;
+  }
+  
+  .button-whform {
+    position: absolute;
+    right: 737px;
+    top: 240px;
+  }
+  
+  .whdental-button {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 48px 47px;
+    font-size: 16px;
+    border: 2px solid #1d1a39;
+    cursor: pointer;
+    margin: 23px;
+    border-radius: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .whdental-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .transparent-button {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 56px 56px;
+    font-size: 16px;
+    border: 2px solid #1d1a39;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .transparent-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  
+  #popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px; /* abgerundete Ecken */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* subtiler Schatten */
+    z-index: 10000; 
+    text-align: center;
+    max-width: 80%; /* Maximalbreite für bessere Lesbarkeit */
+  }
+  
+  #popup p {
+    font-size: 18px; /* Anpassen der Schriftgröße */
+    line-height: 1.5; /* Zeilenhöhe für verbesserte Lesbarkeit */
+  }
